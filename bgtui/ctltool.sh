@@ -15,16 +15,15 @@ elif [[ "$arg" == "v" || "$arg" == "version" ]]; then
 
 elif [[ "$arg" == "i" || "$arg" == "install" ]]; then
   echo "install bgtui"
-  cargo b -r
-
-  mv ./target/release/bgtui ./
-  sudo mv ./bgtui /usr/local/bin/bgtui
-  cargo clean
+  cargo b -r &&
+    mv ./target/release/bgtui ./../ &&
+    sudo mv ./bgtui /usr/local/bin/bgtui &&
+    cargo clean
 
 elif [[ "$arg" == "ib" || "$arg" == "installBgrunner" ]]; then
   echo "install bgrunner"
-  mkdir ~/.config -p
-  cp -r ./bgrunner/ ~/.config/
+  mkdir ~/.config -p &&
+    cp -r ./bgrunner/ ~/.config/
 
 elif [[ "$arg" == "u" || "$arg" == "uninstall" ]]; then
   echo "uninstall bgtui"
