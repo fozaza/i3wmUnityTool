@@ -1,0 +1,4 @@
+#!/bin/bash
+
+image_new=$1
+echo ./backgrounds/$image_new >$HOME/.config/bgrunner/imagePick
